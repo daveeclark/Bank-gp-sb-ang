@@ -14,13 +14,14 @@ import java.util.Optional;
 @Service
 public class BillService {
 
+
   @Autowired
   private BillRepository billRepository;
 
 
 
   //get all bills for specific account
-  public List<Bills> allBillsByAccountId(Long accountId){
+  public List<Bills> allBillsByAccountId(){
     List<Bills> listOfBills = new ArrayList<>();
     billRepository.findAll().forEach(listOfBills::add);
     return listOfBills;
@@ -36,7 +37,7 @@ public class BillService {
 
 
   //get all bills for customer
-  public List<Bills> allBillsByCustomerId(Long customerId) {
+  public List<Bills> allBillsByCustomerId(Long id) {
     List<Bills> allBillsByCustomerId = new ArrayList<>();
     billRepository.findAll().forEach(allBillsByCustomerId::add);
     return allBillsByCustomerId;

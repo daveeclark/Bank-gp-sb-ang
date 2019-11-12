@@ -1,13 +1,12 @@
 package com.example.bankADBS.domains;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Bills {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name="BILLS_ID")
   private Long id; //bill unique identifier
 
